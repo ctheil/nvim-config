@@ -51,9 +51,10 @@ prettier.setup({
 
 -- Format on save for all filetypes supported by prettier
 vim.api.nvim_exec([[
-  augroup PrettierFormatOnSave
+  augroup AutoSaveAndFormatOnWrite
     autocmd!
-    autocmd BufWritePre * Prettier
+    autocmd BufWritePre * lua SaveFormatAndStepOut()
   augroup END
 ]], false)
 
+vim.cmd("command! SaveFormatAndStepOut lua SaveFormatAndStepOut()")

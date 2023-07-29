@@ -1,5 +1,9 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", ":SaveFormatAndStepOut<CR>")
+
+--MarkDown
+vim.keymap.set("n", "<leader>md", ":MarkdownPreview<CR>")
+vim.keymap.set("n", "<leader>mds", ":MarkdownPreviewStop<CR>")
 
 --select lines then move with J and K
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -56,3 +60,14 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w><Lead><Left><Left>
+
+function SaveFormatAndStepOut()
+    if vim.bo.modifiable then
+
+        vim.cmd('w') -- save
+        vim.cmd('Prettier') -- format
+        vim.cmd('Ex') -- step out
+    else 
+        print("Buffer is read-only. Cannot save, format and step out.")
+    end
+end
