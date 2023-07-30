@@ -1,0 +1,5 @@
+- [ ] Use enter to accept LSP suggestions
+- [ ] auto imports
+- [ ] Better error message reporting and TSC understanding
+- [ ] Code ninja / quokka
+- [ ] autoclose HTML and react tags
