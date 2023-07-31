@@ -1,6 +1,8 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", ":SaveFormatAndStepOut<CR>")
 
+vim.keymap.set('n', '<leader>n', "%")
+
 --MarkDown
 vim.keymap.set("n", "<leader>md", ":MarkdownPreview<CR>")
 vim.keymap.set("n", "<leader>mds", ":MarkdownPreviewStop<CR>")

@@ -58,8 +58,29 @@ use({
     run = function() vim.fn["mkdp#util#install"]() end,
 })
 
-use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+--use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
 use('m4xshen/autoclose.nvim')
 
+-- TROUBLE
+use('folke/trouble.nvim')
+use('nvim-tree/nvim-web-devicons')
+
+-- autotag
+use('windwp/nvim-ts-autotag')
+
+-- TODOist
+
+use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+        -- TODO
+      }
+    end
+  }
 end)

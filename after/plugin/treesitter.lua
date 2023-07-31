@@ -1,5 +1,6 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = {  "javascript", "typescript", "vim", "vimdoc", "query" },
+  ensure_installed = {  "html","javascript", "typescript", "vim", "vimdoc", "query" },
+
 
   sync_install = false,
 
@@ -12,3 +13,5 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+
+require('nvim-ts-autotag').setup()
