@@ -83,4 +83,7 @@ use {
       }
     end
   }
+
+  -- TMUX / NVIM
+  use('christoomey/vim-tmux-navigator')
 end)
