@@ -5,6 +5,7 @@ local event = "BufWritePre" -- or "BufWritePost"
 local async = event == "BufWritePost"
 
 null_ls.setup({
+
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
       vim.keymap.set("n", "<Leader>f", function()
@@ -52,10 +53,25 @@ prettier.setup({
  --Format on save for all filetypes supported by prettier
 vim.api.nvim_exec([[
   augroup AutoSaveAndFormatOnWrite
-            autocmd!
+    autocmd!
     autocmd BufWritePre * lua SaveAndFormat()
   augroup END
 ]], false)
+
+
+ --Save and format on exit
+vim.api.nvim_exec([[
+  augroup AutoSaveOnLeave
+    autocmd!
+    autocmd BufWinLeave * if &buftype == '' |  update | endif
+  augroup END
+]], false)
+--vim.api.nvim_exec([[
+--  augroup AutoSaveOnQuit
+--    autocmd!
+--    autocmd QuitPre * update
+--  augroup END
+--]], false)
 
 
 
