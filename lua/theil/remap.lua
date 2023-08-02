@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", ":SaveFormatAndStepOut<CR>")
 
 vim.keymap.set('n', '<leader>n', "%")
 
@@ -65,11 +64,48 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 function SaveFormatAndStepOut()
     if vim.bo.modifiable then
-
         vim.cmd('w') -- save
+
+        -- Save cursor position
+        local saved_pos = vim.fn.getpos(".")
+
         vim.cmd('Prettier') -- format
-        vim.cmd('Ex') -- step out
+
+        -- Restore cursor position after a delay
+        vim.defer_fn(function()
+            vim.fn.setpos('.', saved_pos)
+        end, 100) -- delay in milliseconds
+
+        -- Restore cursor position after a delay
+        vim.defer_fn(function()
+            vim.cmd('Ex') -- step out
+        end, 100) -- delay in milliseconds
+
+        --print("SaveFormatAndStepOut")
     else 
         print("Buffer is read-only. Cannot save, format and step out.")
     end
 end
+
+function SaveAndFormat()
+
+    if vim.bo.modifiable then
+        vim.cmd('w') -- save
+
+        -- Save cursor position
+        local saved_pos = vim.fn.getpos(".")
+
+        vim.cmd('Prettier') -- format
+
+        -- Restore cursor position after a delay
+        vim.defer_fn(function()
+            vim.fn.setpos('.', saved_pos)
+        end, 100) -- delay in milliseconds
+
+    else 
+        print("Buffer is read-only. Cannot save, format and step out.")
+    end
+end
+
+vim.api.nvim_set_keymap('n', '<leader>pv', ':lua SaveFormatAndStepOut()<CR>', {noremap = true, silent = true})
+--vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
