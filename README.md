@@ -8,3 +8,14 @@
 2. run `:PackerSync`
 3. nave to /after/eachFile and run `:so`
 4. repeat 1-3 until no more errors - this is probably terrible but and there is prob a better way... oh well.
+
+## add'tnl
+Add `vim` or `v` alias to .zshrc to open nvim as default
+
+### `~/.zshrc`
+```bash
+#add to eof
+alias vim="nvim"
+alias v="nvim"
+```
+`$ source ~/.zshrc`
