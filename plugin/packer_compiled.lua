@@ -154,6 +154,11 @@ _G.packer_plugins = {
     path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["popup-menu.nvim"] = {
+    loaded = true,
+    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/popup-menu.nvim",
+    url = "https://github.com/kamykn/popup-menu.nvim"
+  },
   ["prettier.nvim"] = {
     loaded = true,
     path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/prettier.nvim",
@@ -163,6 +168,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
+  },
+  ["spelunker.vim"] = {
+    loaded = true,
+    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/spelunker.vim",
+    url = "https://github.com/kamykn/spelunker.vim"
   },
   ["telescope.nvim"] = {
     loaded = true,

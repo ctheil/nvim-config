@@ -86,4 +86,8 @@ use {
 
   -- TMUX / NVIM
   use('christoomey/vim-tmux-navigator')
+
+  -- SPELLCHECKER
+  use('kamykn/spelunker.vim')
+  use('kamykn/popup-menu.nvim')
 end)
