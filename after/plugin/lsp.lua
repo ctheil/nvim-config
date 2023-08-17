@@ -1,3 +1,5 @@
+require('mason').setup()
+require('mason-lspconfig').setup()
 local lsp = require('lsp-zero')
 
 lsp.preset("recommended")
@@ -5,7 +7,12 @@ lsp.preset("recommended")
 lsp.ensure_installed({
 	'tsserver',
 	'eslint', 
-	'rust_analyzer'
+	'rust_analyzer',
+    'cssls', 
+    'cssmodules_ls', 
+    'unocss'
+    --'gopls',
+    --'golangci_lint_ls'
 })
 
 local cmp = require('cmp')

@@ -1,4 +1,4 @@
--v This file can be loaded by calling `lua require('plugins')` from your init.vim
+--v This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
 vim.cmd([[packadd packer.nvim]])
@@ -58,7 +58,6 @@ use({
     run = function() vim.fn["mkdp#util#install"]() end,
 })
 
---use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
 use('m4xshen/autoclose.nvim')
 
@@ -90,4 +89,13 @@ use {
   -- SPELLCHECKER
   use('kamykn/spelunker.vim')
   use('kamykn/popup-menu.nvim')
+
+ -- use('williamboman/mason-lspconfig.nvim')
+ -- use('williamboman/mason.nvim')
+
+ -- use('leoluz/nvim-dap-go')
+use 'ray-x/go.nvim'
+use 'ray-x/guihua.lua' -- recommended if need floating window support
+use 'neovim/nvim-lspconfig'
+use 'nvim-treesitter/nvim-treesitter'
 end)

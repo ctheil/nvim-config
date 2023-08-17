@@ -54,7 +54,7 @@ prettier.setup({
 vim.api.nvim_exec([[
   augroup AutoSaveAndFormatOnWrite
     autocmd!
-    autocmd BufWritePre * lua SaveAndFormat()
+    autocmd BufWritePre * if &filetype != 'go' | lua SaveAndFormat() | endif
   augroup END
 ]], false)
 
