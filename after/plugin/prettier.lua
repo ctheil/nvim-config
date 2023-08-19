@@ -51,10 +51,16 @@ prettier.setup({
 })
 
  --Format on save for all filetypes supported by prettier
+--vim.api.nvim_exec([[
+--  augroup AutoSaveAndFormatOnWrite
+--    autocmd!
+--    autocmd BufWritePre * if &filetype != 'go' | lua SaveAndFormat() | endif
+--  augroup END
+--]], false)
 vim.api.nvim_exec([[
   augroup AutoSaveAndFormatOnWrite
     autocmd!
-    autocmd BufWritePre * if &filetype != 'go' | lua SaveAndFormat() | endif
+    autocmd BufWritePre *  lua SaveAndFormat() 
   augroup END
 ]], false)
 
