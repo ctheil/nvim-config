@@ -62,40 +62,70 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w><Lead><Left><Left>
 
+--function SaveFormatAndStepOut()
+--    if vim.bo.filetype == 'go' then
+--        return
+--    end
+--    if vim.bo.modifiable then
+--        vim.cmd('w') -- save
+--
+--        -- Save cursor position
+--        local saved_pos = vim.fn.getpos(".")
+--
+--        vim.cmd('Prettier') -- format
+--
+--        -- Restore cursor position after a delay
+--        vim.defer_fn(function()
+--            vim.fn.setpos('.', saved_pos)
+--        end, 100) -- delay in milliseconds
+--
+--        -- Restore cursor position after a delay
+--        vim.defer_fn(function()
+--            vim.cmd('Ex') -- step out
+--        end, 100) -- delay in milliseconds
+--
+--        --print("SaveFormatAndStepOut")
+--    else 
+--        print("Buffer is read-only. Cannot save, format and step out.")
+--    end
+--end
 function SaveFormatAndStepOut()
     if vim.bo.modifiable then
         vim.cmd('w') -- save
 
-        -- Save cursor position
-        local saved_pos = vim.fn.getpos(".")
+        if vim.bo.filetype ~= 'go' then
+            -- Save cursor position
+            local saved_pos = vim.fn.getpos(".")
 
-        vim.cmd('Prettier') -- format
+            vim.cmd('Prettier') -- format
 
-        -- Restore cursor position after a delay
+            -- Restore cursor position after a delay
+            vim.defer_fn(function()
+                vim.fn.setpos('.', saved_pos)
+            end, 100) -- delay in milliseconds
+        end
+
+        -- Step out of the buffer after a delay
         vim.defer_fn(function()
-            vim.fn.setpos('.', saved_pos)
-        end, 100) -- delay in milliseconds
+            vim.cmd('Ex')
+        end, 200) -- delay in milliseconds
 
-        -- Restore cursor position after a delay
-        vim.defer_fn(function()
-            vim.cmd('Ex') -- step out
-        end, 100) -- delay in milliseconds
-
-        --print("SaveFormatAndStepOut")
     else 
         print("Buffer is read-only. Cannot save, format and step out.")
     end
 end
 
-function SaveAndFormat()
 
+function SaveAndFormat()
     if vim.bo.modifiable then
         vim.cmd('w') -- save
 
+        if vim.bo.filetype ~= 'go' then
         -- Save cursor position
         local saved_pos = vim.fn.getpos(".")
 
         vim.cmd('Prettier') -- format
+        end
 
         -- Restore cursor position after a delay
         vim.defer_fn(function()
