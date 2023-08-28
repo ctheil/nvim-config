@@ -97,7 +97,26 @@ use {
 use 'ray-x/go.nvim'
 use 'ray-x/guihua.lua' -- recommended if need floating window support
 
-use 'nvim-treesitter/nvim-treesitter'
 
 use { "catppuccin/nvim", as = "catppuccin" }
+
+--  Nvim tree file visualizer
+--use {
+--    "nvim-tree/nvim-tree.lua", 
+--    requires = "nvim-tree/nvim-web-devicons",
+--}
+
+-- auto comments
+use {
+
+    "numToStr/Comment.nvim",
+    config = function()
+        require("Comment").setup()
+    end
+}
+
+use {
+   "m4xshen/hardtime.nvim",
+   requires = { 'MunifTanjim/nui.nvim', "nvim-lua/plenary.nvim" }
+}
 end)
