@@ -59,7 +59,6 @@ use({
 })
 
 
-use('m4xshen/autoclose.nvim')
 
 -- TROUBLE
 use('folke/trouble.nvim')
@@ -67,6 +66,7 @@ use('nvim-tree/nvim-web-devicons')
 
 -- autotag
 use('windwp/nvim-ts-autotag')
+use('m4xshen/autoclose.nvim')
 
 -- TODOist
 
@@ -115,8 +115,10 @@ use {
     end
 }
 
-use {
-   "m4xshen/hardtime.nvim",
-   requires = { 'MunifTanjim/nui.nvim', "nvim-lua/plenary.nvim" }
-}
+-- use {
+--    "m4xshen/hardtime.nvim",
+--    requires = { 'MunifTanjim/nui.nvim', "nvim-lua/plenary.nvim" }
+-- }
+--
+--
 end)

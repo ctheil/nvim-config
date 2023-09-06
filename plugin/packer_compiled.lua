@@ -110,11 +110,6 @@ _G.packer_plugins = {
     path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/guihua.lua",
     url = "https://github.com/ray-x/guihua.lua"
   },
-  ["hardtime.nvim"] = {
-    loaded = true,
-    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/hardtime.nvim",
-    url = "https://github.com/m4xshen/hardtime.nvim"
-  },
   harpoon = {
     loaded = true,
     path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -139,11 +134,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["nui.nvim"] = {
-    loaded = true,
-    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/nui.nvim",
-    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
