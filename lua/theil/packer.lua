@@ -74,12 +74,7 @@ use {
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
     config = function()
-      require("todo-comments").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-        -- TODO
-      }
+      require("todo-comments").setup()
     end
   }
 
@@ -90,21 +85,12 @@ use {
   use('kamykn/spelunker.vim')
   use('kamykn/popup-menu.nvim')
 
- -- use('williamboman/mason-lspconfig.nvim')
- -- use('williamboman/mason.nvim')
-
- -- use('leoluz/nvim-dap-go')
 use 'ray-x/go.nvim'
 use 'ray-x/guihua.lua' -- recommended if need floating window support
 
 
 use { "catppuccin/nvim", as = "catppuccin" }
 
---  Nvim tree file visualizer
---use {
---    "nvim-tree/nvim-tree.lua", 
---    requires = "nvim-tree/nvim-web-devicons",
---}
 
 -- auto comments
 use {
@@ -115,10 +101,25 @@ use {
     end
 }
 
--- use {
---    "m4xshen/hardtime.nvim",
---    requires = { 'MunifTanjim/nui.nvim', "nvim-lua/plenary.nvim" }
--- }
---
---
+-- WhichKey
+use {
+  "folke/which-key.nvim",
+  config = function()
+    vim.o.timeout = true
+    vim.o.timeoutlen = 300
+    require("which-key").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
+}
+
+-- colorizer
+use('norcalli/nvim-colorizer.lua')
+
+-- indent lines
+use("lukas-reineke/indent-blankline.nvim")
+
+
 end)
