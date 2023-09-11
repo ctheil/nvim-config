@@ -121,5 +121,10 @@ use('norcalli/nvim-colorizer.lua')
 -- indent lines
 use("lukas-reineke/indent-blankline.nvim")
 
+-- JAVA
+use("mfussenegger/nvim-jdtls")
+use("mfussenegger/nvim-dap")
+use("mfussenegger/nvim-dap-ui")
+
 
 end)

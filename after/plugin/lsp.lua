@@ -10,7 +10,7 @@ lsp.ensure_installed({
 	'rust_analyzer',
     'cssls', 
     'cssmodules_ls', 
-    'unocss'
+    'unocss',
     --'gopls',
     --'golangci_lint_ls'
 })
@@ -48,6 +48,8 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 
 end)
+
+lsp.skip_server_setup({'jdtls'})
 
 -- (Optional) Configure lua language server for neovim
 --require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
