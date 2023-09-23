@@ -6,6 +6,10 @@ vim.keymap.set('n', '<leader>n', "%")
 vim.keymap.set("n", "<leader>md", ":MarkdownPreview<CR>")
 vim.keymap.set("n", "<leader>mds", ":MarkdownPreviewStop<CR>")
 
+-- EMMET
+-- vim.keymap.set("i", "<C-a>", "<C-y>,")
+vim.api.nvim_set_var('user_emmet_leader_key', '<C-a>')
+
 --select lines then move with J and K
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")

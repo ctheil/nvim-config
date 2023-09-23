@@ -158,4 +158,7 @@ use {
  -- FZF
  use 'nvim-telescope/telescope-fzf-native.nvim'
 
+ -- emmet
+ use 'mattn/emmet-vim'
+ vim.g.user_emmet_leader_key = '<C-a>'
 end)
