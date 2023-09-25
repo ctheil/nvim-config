@@ -290,4 +290,4 @@ vim.api.nvim_create_autocmd('FileType', {
 -- }
 --
 -- require('jdtls').start_or_attach(config)
-local path = 'Users/calebtheil/development/skds/java/bin/jdtls'
+local path = 'Users/calebtheil/development/sdks/java/bin/jdtls'
