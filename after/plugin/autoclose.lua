@@ -21,3 +21,4 @@ local config = {
    },
 }
 require("autoclose").setup(config)
+require("nvim-surround").setup()
