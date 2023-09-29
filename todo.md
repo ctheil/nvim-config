@@ -1,8 +1,0 @@
-- [x] Use enter to accept LSP suggestions
-- [/] auto imports
-- [x] Better error message reporting and TSC understanding
-- [o] Code ninja / quokka
-- [x] autoclose HTML and react tags
-- [o] Todo highlights
-- [ ] remap new files to <leader>n
-- [ ] auto comment out selection
