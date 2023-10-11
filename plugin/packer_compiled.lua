@@ -182,12 +182,9 @@ _G.packer_plugins = {
     url = "https://github.com/williamboman/mason.nvim"
   },
   neorg = {
-    config = { "\27LJ\2\nÄ\1\0\0\a\0\14\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\f\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\0035\4\t\0005\5\a\0005\6\6\0=\6\b\5=\5\n\4=\4\v\3=\3\r\2B\0\2\1K\0\1\0\tload\1\0\0\16core.dirman\vconfig\1\0\0\15workspaces\1\0\0\1\0\1\nnotes\f~/notes\19core.concealer\18core.defaults\1\0\0\nsetup\nneorg\fretuire\0" },
-    load_after = {},
-    loaded = false,
-    needs_bufread = true,
-    only_cond = false,
-    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/opt/neorg",
+    config = { "\27LJ\2\nÄ\1\0\0\a\0\14\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\f\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\0035\4\t\0005\5\a\0005\6\6\0=\6\b\5=\5\n\4=\4\v\3=\3\r\2B\0\2\1K\0\1\0\tload\1\0\0\16core.dirman\vconfig\1\0\0\15workspaces\1\0\0\1\0\1\nnotes\f~/notes\19core.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0" },
+    loaded = true,
+    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/neorg",
     url = "https://github.com/nvim-neorg/neorg"
   },
   ["nui.nvim"] = {
@@ -335,38 +332,26 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-try_loadstring("\27LJ\2\nt\0\0\3\0\a\0\0156\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\15timeoutlen\ftimeout\6o\bvim\0", "config", "which-key.nvim")
-time([[Config for which-key.nvim]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
-time([[Config for Comment.nvim]], false)
--- Config for: todo-comments.nvim
-time([[Config for todo-comments.nvim]], true)
-try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
-time([[Config for todo-comments.nvim]], false)
 -- Config for: alpha-nvim
 time([[Config for alpha-nvim]], true)
 try_loadstring("\27LJ\2\n`\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\26alpha.themes.startify\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
 time([[Config for alpha-nvim]], false)
--- Load plugins in order defined by `after`
-time([[Sequenced loading]], true)
-vim.cmd [[ packadd nvim-treesitter ]]
-time([[Sequenced loading]], false)
-vim.cmd [[augroup packer_load_aucmds]]
-vim.cmd [[au!]]
-  -- Filetype lazy-loads
-time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType neorg ++once lua require("packer.load")({'neorg'}, { ft = "neorg" }, _G.packer_plugins)]]
-time([[Defining lazy-load filetype autocommands]], false)
-vim.cmd("augroup END")
-vim.cmd [[augroup filetypedetect]]
-time([[Sourcing ftdetect script at: /Users/calebtheil/.local/share/nvim/site/pack/packer/opt/neorg/ftdetect/norg.lua]], true)
-vim.cmd [[source /Users/calebtheil/.local/share/nvim/site/pack/packer/opt/neorg/ftdetect/norg.lua]]
-time([[Sourcing ftdetect script at: /Users/calebtheil/.local/share/nvim/site/pack/packer/opt/neorg/ftdetect/norg.lua]], false)
-vim.cmd("augroup END")
+-- Config for: neorg
+time([[Config for neorg]], true)
+try_loadstring("\27LJ\2\nÄ\1\0\0\a\0\14\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\f\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\0035\4\t\0005\5\a\0005\6\6\0=\6\b\5=\5\n\4=\4\v\3=\3\r\2B\0\2\1K\0\1\0\tload\1\0\0\16core.dirman\vconfig\1\0\0\15workspaces\1\0\0\1\0\1\nnotes\f~/notes\19core.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0", "config", "neorg")
+time([[Config for neorg]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\nt\0\0\3\0\a\0\0156\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\15timeoutlen\ftimeout\6o\bvim\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
+-- Config for: todo-comments.nvim
+time([[Config for todo-comments.nvim]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
+time([[Config for todo-comments.nvim]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
+time([[Config for Comment.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

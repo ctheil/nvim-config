@@ -183,28 +183,24 @@ use {
     }
 }
 --NEORG
-use  {
+use {
     "nvim-neorg/neorg",
-    ft = "neorg",
-    after = "nvim-treesitter",
     config = function()
-    retuire("neorg").setup {
-        load = {
-            ["core.defaults"] = {}, -- loads default behavior
-            ["core.concealer"] = {}, -- addds prety icons to docs
-            ["core.dirman"] = { -- manages neorg workspaces
-                config = {
-                    workspaces = {
-                        notes = "~/notes"
+        require('neorg').setup {
+            load = {
+                ["core.defaults"] = {}, -- Loads default behaviour
+                ["core.concealer"] = {}, -- Adds pretty icons to your documents
+                ["core.dirman"] = { -- Manages Neorg workspaces
+                    config = {
+                        workspaces = {
+                            notes = "~/notes",
+                        },
                     },
                 },
             },
         }
-    }
-end,
-run = ":Neorg sync-parsers",
-requires = "nvim-lua/plenary.nvim",
-
+    end,
+    run = ":Neorg sync-parsers",
+    requires = "nvim-lua/plenary.nvim",
 }
-
 end)
