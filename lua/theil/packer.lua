@@ -164,4 +164,25 @@ use {
 
  -- surround
  use 'kylechui/nvim-surround'
+
+ -- leetcode
+
+use {
+    'kawre/leetcode.nvim', 
+    requires = {
+        "nvim-treesitter/nvim-treesitter",
+        "nvim-telescope/telescope.nvim",
+        "nvim-lua/plenary.nvim", -- required by telescope
+        "MunifTanjim/nui.nvim",
+
+        -- optional
+        "nvim-tree/nvim-web-devicons",
+
+        -- recommended
+        -- "rcarriga/nvim-notify"
+    }
+}
+--NEORG
+use  "nvim-neorg/neorg"
+
 end)

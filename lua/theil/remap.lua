@@ -54,7 +54,7 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- tmux sessions ~fuzfind DOES NOT WORK WITHOUT tmux-sessionizer
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux new tmux-sessionizer<CR>")
 
 
 -- cntrl k/j jump between errors
@@ -63,6 +63,11 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 -- leader k/j jump between location lists???
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+
+-- new filetype
+-- vim.api.nvim_set_keymap("n", "<leader>n", ":% ", {noremap= true, silent=true})
+--
+
 
 -- vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w><Lead><Left><Left>
 
@@ -141,7 +146,18 @@ function SaveAndFormat()
     end
 end
 
+function create_new_file()
+    local new_file_name = vim.fn.input("Enter the new file name: ")
+    if new_file_name ~= "" then
+        vim.cmd('e ' .. new_file_name)
+    end
+end
+
+vim.api.nvim_set_keymap('n', '<leader>n', [[<Cmd>lua create_new_file()<CR>]], {noremap=true, silent=true})
+
 vim.api.nvim_set_keymap('n', '<leader>pv', ':lua SaveFormatAndStepOut()<CR>', {noremap = true, silent = true})
 --vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
+--
+--
 --
 --
