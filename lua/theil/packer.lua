@@ -18,6 +18,8 @@ return require("packer").startup(function(use)
 	vim.cmd("colorscheme rose-pine")
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
+	use("nvim-treesitter/nvim-treesitter-context" )
+
 	use("theprimeagen/harpoon")
 
 	use("mbbill/undotree")
@@ -208,3 +210,4 @@ use {
   "ray-x/lsp_signature.nvim",
 }
 end)
+
