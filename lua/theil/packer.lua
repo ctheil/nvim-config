@@ -167,21 +167,21 @@ use {
 
  -- leetcode
 
-use {
-    'kawre/leetcode.nvim', 
-    requires = {
-        "nvim-treesitter/nvim-treesitter",
-        "nvim-telescope/telescope.nvim",
-        "nvim-lua/plenary.nvim", -- required by telescope
-        "MunifTanjim/nui.nvim",
-
-        -- optional
-        "nvim-tree/nvim-web-devicons",
-
-        -- recommended
-        -- "rcarriga/nvim-notify"
-    }
-}
+-- use {
+--     'kawre/leetcode.nvim', 
+--     requires = {
+--         "nvim-treesitter/nvim-treesitter",
+--         "nvim-telescope/telescope.nvim",
+--         "nvim-lua/plenary.nvim", -- required by telescope
+--         "MunifTanjim/nui.nvim",
+--
+--         -- optional
+--         "nvim-tree/nvim-web-devicons",
+--
+--         -- recommended
+--         -- "rcarriga/nvim-notify"
+--     }
+-- }
 --NEORG
 use {
     "nvim-neorg/neorg",
@@ -202,5 +202,9 @@ use {
     end,
     run = ":Neorg sync-parsers",
     requires = "nvim-lua/plenary.nvim",
+}
+
+use {
+  "ray-x/lsp_signature.nvim",
 }
 end)
