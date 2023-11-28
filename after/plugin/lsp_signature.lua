@@ -65,3 +65,6 @@ require('lsp_signature').status_line(max_width)
 -- You can also do this inside lsp on_attach
 -- note: on_attach deprecated
 require'lsp_signature'.on_attach(cfg, bufnr) -- no need to specify bufnr if you don't use toggle_key
+-- KEYMAPS
+vim.keymap.set({'n'}, 'C-f', function() require('lsp_signature').toggle_float_win()
+end, {silent = true, noremap = true, desc = 'toggle signature'})

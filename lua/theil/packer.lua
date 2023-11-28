@@ -209,5 +209,7 @@ use {
 use {
   "ray-x/lsp_signature.nvim",
 }
+-- vim.notify
+use 'rcarriga/nvim-notify'
 end)
 

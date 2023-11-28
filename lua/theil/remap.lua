@@ -64,6 +64,8 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
+-- set vim notify as default notifications
+vim.notify = require("notify")
 -- new filetype
 -- vim.api.nvim_set_keymap("n", "<leader>n", ":% ", {noremap= true, silent=true})
 --
@@ -158,6 +160,9 @@ vim.api.nvim_set_keymap('n', '<leader>n', [[<Cmd>lua create_new_file()<CR>]], {n
 vim.api.nvim_set_keymap('n', '<leader>pv', ':lua SaveFormatAndStepOut()<CR>', {noremap = true, silent = true})
 --vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
 --
+vim.keymap.set({'n'}, 'C-f', function() require('lsp_signature').toggle_float_win()
+end, {silent = true, noremap = true, desc = 'toggle signature'})
+
 --
 --
---
+ 
