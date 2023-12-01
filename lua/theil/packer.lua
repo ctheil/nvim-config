@@ -13,11 +13,16 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" }, {'sharkdp/fd'} },
 	})
 
-	use({ "rose-pine/neovim", as = "rose-pine" })
+	-- use({ "rose-pine/neovim", as = "rose-pine" })
 
-	vim.cmd("colorscheme rose-pine")
+	-- vim.cmd("colorscheme rose-pine")
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
+--     use {
+-- "nvim-treesitter/nvim-treesitter",
+-- run = ":TSUpdate",
+-- cmd = {'TSInstall', 'TSUpdate'}
+--     }
 	use("nvim-treesitter/nvim-treesitter-context" )
 
 	use("theprimeagen/harpoon")
@@ -25,6 +30,10 @@ return require("packer").startup(function(use)
 	use("mbbill/undotree")
 
 	use("tpope/vim-fugitive")
+    use {
+"tpope/vim-fugitive",
+event = "BufWritePost"
+    }
 
 	use({
 		"VonHeikemen/lsp-zero.nvim",
@@ -50,44 +59,65 @@ return require("packer").startup(function(use)
 
 use('neovim/nvim-lspconfig')
 use('jose-elias-alvarez/null-ls.nvim')
-use('MunifTanjim/prettier.nvim')
+use {
+'MunifTanjim/prettier.nvim',
+}
 
 -- MKARDOWN
 -- install without yarn or npm
--- use({
---     "iamcco/markdown-preview.nvim",
---     run = function() vim.fn["mkdp#util#install"]() end,
--- })
+use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+    event = "BufRead *.md"
+})
 
 
 
 -- TROUBLE
--- use('folke/trouble.nvim')
+use('folke/trouble.nvim')
 use('nvim-tree/nvim-web-devicons')
 
 -- autotag
 use('windwp/nvim-ts-autotag')
-use('m4xshen/autoclose.nvim')
+use 'm4xshen/autoclose.nvim'
+-- use {
+-- 'm4xshen/autoclose.nvim',
+-- event = "BufReadPost"
+-- }
 
 -- TODOist
+-- TODO: This is a test
 
 use {
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
     config = function()
       require("todo-comments").setup()
-    end
+    end,
+    event = "BufReadPost"
   }
 
   -- TMUX / NVIM
   use('christoomey/vim-tmux-navigator')
 
   -- SPELLCHECKER
-  use('kamykn/spelunker.vim')
-  use('kamykn/popup-menu.nvim')
+  use {
+'kamykn/spelunker.vim',
+event = "BufReadPost"
+  }
+  use {
+'kamykn/popup-menu.nvim',
+event = "BufReadPost"
+  }
 
-use 'ray-x/go.nvim'
-use 'ray-x/guihua.lua' -- recommended if need floating window support
+use {
+ 'ray-x/go.nvim',
+ event = "BufRead *.go"
+}
+use {
+'ray-x/guihua.lua',
+ event = "BufRead *.go"
+}
 
 
 use { "catppuccin/nvim", as = "catppuccin" }
@@ -99,7 +129,8 @@ use {
     "numToStr/Comment.nvim",
     config = function()
         require("Comment").setup()
-    end
+    end,
+    event = "BufReadPost"
 }
 
 -- WhichKey
@@ -123,9 +154,18 @@ use('norcalli/nvim-colorizer.lua')
 use("lukas-reineke/indent-blankline.nvim")
 
 -- JAVA
-use("mfussenegger/nvim-jdtls")
-use("mfussenegger/nvim-dap")
-use("mfussenegger/nvim-dap-ui")
+use {
+"mfussenegger/nvim-jdtls",
+event = "BufRead *.java"
+}
+use {
+"mfussenegger/nvim-dap",
+event = "BufRead *.java"
+}
+use {
+"mfussenegger/nvim-dap-ui",
+event = "BufRead *.java"
+}
 
 -- startupscreen
 
@@ -145,7 +185,10 @@ use 'hrsh7th/cmp-cmdline'
 use 'hrsh7th/nvim-cmp'
 
 -- gitgutter
-use 'airblade/vim-gitgutter'
+use {
+ 'airblade/vim-gitgutter',
+event = "BufReadPost"
+}
 
 --lualine
 use {
@@ -155,62 +198,32 @@ use {
 
 -- nvim-multi-cursor
 -- <C-n>
- use 'mg979/vim-visual-multi'
+ use {
+ 'mg979/vim-visual-multi',
+ event = "BufReadPost"
+ }
 
  -- FZF
  use 'nvim-telescope/telescope-fzf-native.nvim'
 
  -- emmet
- use 'mattn/emmet-vim'
+ use {
+ 'mattn/emmet-vim',
+ event = "BufRead *.tsx *.jsx *.ts *.js *.html"
+
+ }
  vim.g.user_emmet_leader_key = '<C-a>'
 
  -- surround
- use 'kylechui/nvim-surround'
+ use {
+ 'kylechui/nvim-surround',
+ event = "BufReadPost"
+ }
 
- -- leetcode
-
--- use {
---     'kawre/leetcode.nvim', 
---     requires = {
---         "nvim-treesitter/nvim-treesitter",
---         "nvim-telescope/telescope.nvim",
---         "nvim-lua/plenary.nvim", -- required by telescope
---         "MunifTanjim/nui.nvim",
---
---         -- optional
---         "nvim-tree/nvim-web-devicons",
---
---         -- recommended
---         -- "rcarriga/nvim-notify"
---     }
--- }
---NEORG
--- use {
---     "nvim-neorg/neorg",
---     config = function()
---         require('neorg').setup {
---             load = {
---                 ["core.defaults"] = {}, -- Loads default behaviour
---                 ["core.concealer"] = {}, -- Adds pretty icons to your documents
---                 ["core.dirman"] = { -- Manages Neorg workspaces
---                     config = {
---                         workspaces = {
---                             notes = "~/notes",
---                         },
---                     },
---                 },
---             },
---         }
---     end,
---     run = ":Neorg sync-parsers",
---     requires = "nvim-lua/plenary.nvim",
--- }
 
 use {
   "ray-x/lsp_signature.nvim",
 }
 
--- vim.notify
--- use 'rcarriga/nvim-notify'
 end)
 

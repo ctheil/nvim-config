@@ -76,8 +76,10 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["Comment.nvim"] = {
     config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0" },
-    loaded = true,
-    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/opt/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
   LuaSnip = {
@@ -116,8 +118,10 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/cmp-path"
   },
   ["emmet-vim"] = {
-    loaded = true,
-    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/emmet-vim",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/opt/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
   },
   fd = {
@@ -126,13 +130,17 @@ _G.packer_plugins = {
     url = "https://github.com/sharkdp/fd"
   },
   ["go.nvim"] = {
-    loaded = true,
-    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/go.nvim",
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/opt/go.nvim",
     url = "https://github.com/ray-x/go.nvim"
   },
   ["guihua.lua"] = {
-    loaded = true,
-    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/guihua.lua",
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/opt/guihua.lua",
     url = "https://github.com/ray-x/guihua.lua"
   },
   harpoon = {
@@ -160,6 +168,13 @@ _G.packer_plugins = {
     path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["markdown-preview.nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -186,18 +201,24 @@ _G.packer_plugins = {
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-dap"] = {
-    loaded = true,
-    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/opt/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
   },
   ["nvim-dap-ui"] = {
-    loaded = true,
-    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/opt/nvim-dap-ui",
     url = "https://github.com/mfussenegger/nvim-dap-ui"
   },
   ["nvim-jdtls"] = {
-    loaded = true,
-    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/nvim-jdtls",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/opt/nvim-jdtls",
     url = "https://github.com/mfussenegger/nvim-jdtls"
   },
   ["nvim-lspconfig"] = {
@@ -241,8 +262,10 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["popup-menu.nvim"] = {
-    loaded = true,
-    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/popup-menu.nvim",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/opt/popup-menu.nvim",
     url = "https://github.com/kamykn/popup-menu.nvim"
   },
   ["prettier.nvim"] = {
@@ -250,14 +273,12 @@ _G.packer_plugins = {
     path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/prettier.nvim",
     url = "https://github.com/MunifTanjim/prettier.nvim"
   },
-  ["rose-pine"] = {
-    loaded = true,
-    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/rose-pine",
-    url = "https://github.com/rose-pine/neovim"
-  },
   ["spelunker.vim"] = {
-    loaded = true,
-    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/spelunker.vim",
+    after_files = { "/Users/calebtheil/.local/share/nvim/site/pack/packer/opt/spelunker.vim/after/plugin/ctrlp/spelunker.vim" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/opt/spelunker.vim",
     url = "https://github.com/kamykn/spelunker.vim"
   },
   ["telescope-fzf-native.nvim"] = {
@@ -272,9 +293,16 @@ _G.packer_plugins = {
   },
   ["todo-comments.nvim"] = {
     config = { "\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18todo-comments\frequire\0" },
-    loaded = true,
-    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/opt/todo-comments.nvim",
     url = "https://github.com/folke/todo-comments.nvim"
+  },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
   },
   undotree = {
     loaded = true,
@@ -287,8 +315,10 @@ _G.packer_plugins = {
     url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-gitgutter"] = {
-    loaded = true,
-    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/opt/vim-gitgutter",
     url = "https://github.com/airblade/vim-gitgutter"
   },
   ["vim-tmux-navigator"] = {
@@ -297,8 +327,10 @@ _G.packer_plugins = {
     url = "https://github.com/christoomey/vim-tmux-navigator"
   },
   ["vim-visual-multi"] = {
-    loaded = true,
-    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/opt/vim-visual-multi",
     url = "https://github.com/mg979/vim-visual-multi"
   },
   ["which-key.nvim"] = {
@@ -310,18 +342,21 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
-time([[Config for Comment.nvim]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
 try_loadstring("\27LJ\2\nt\0\0\3\0\a\0\0156\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\15timeoutlen\ftimeout\6o\bvim\0", "config", "which-key.nvim")
 time([[Config for which-key.nvim]], false)
--- Config for: todo-comments.nvim
-time([[Config for todo-comments.nvim]], true)
-try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
-time([[Config for todo-comments.nvim]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au BufRead *.md ++once lua require("packer.load")({'markdown-preview.nvim'}, { event = "BufRead *.md" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead *.go ++once lua require("packer.load")({'go.nvim', 'guihua.lua'}, { event = "BufRead *.go" }, _G.packer_plugins)]]
+vim.cmd [[au BufReadPost * ++once lua require("packer.load")({'popup-menu.nvim', 'spelunker.vim', 'todo-comments.nvim', 'Comment.nvim', 'vim-gitgutter', 'vim-visual-multi'}, { event = "BufReadPost *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead *.java ++once lua require("packer.load")({'nvim-dap', 'nvim-dap-ui', 'nvim-jdtls'}, { event = "BufRead *.java" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead *.tsx *.jsx *.ts *.js *.html ++once lua require("packer.load")({'emmet-vim'}, { event = "BufRead *.tsx *.jsx *.ts *.js *.html" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

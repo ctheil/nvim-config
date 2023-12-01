@@ -1,3 +1,4 @@
+if pcall(require, 'go') then
 local go = require('go').setup()
 
 require('go.format').gofmt()
@@ -11,4 +12,4 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     end,
     group = format_sync_grp,
 })
-
+end
