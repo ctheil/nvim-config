@@ -65,7 +65,7 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- set vim notify as default notifications
-vim.notify = require("notify")
+-- vim.notify = require("notify")
 -- new filetype
 -- vim.api.nvim_set_keymap("n", "<leader>n", ":% ", {noremap= true, silent=true})
 --

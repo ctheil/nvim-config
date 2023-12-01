@@ -54,15 +54,15 @@ use('MunifTanjim/prettier.nvim')
 
 -- MKARDOWN
 -- install without yarn or npm
-use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-})
+-- use({
+--     "iamcco/markdown-preview.nvim",
+--     run = function() vim.fn["mkdp#util#install"]() end,
+-- })
 
 
 
 -- TROUBLE
-use('folke/trouble.nvim')
+-- use('folke/trouble.nvim')
 use('nvim-tree/nvim-web-devicons')
 
 -- autotag
@@ -129,13 +129,13 @@ use("mfussenegger/nvim-dap-ui")
 
 -- startupscreen
 
-use {
-    'goolord/alpha-nvim',
-    requires = { 'nvim-tree/nvim-web-devicons' },
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.startify'.config)
-    end
-}
+-- use {
+--     'goolord/alpha-nvim',
+--     requires = { 'nvim-tree/nvim-web-devicons' },
+--     config = function ()
+--         require'alpha'.setup(require'alpha.themes.startify'.config)
+--     end
+-- }
 
 -- nvim cmp
 use 'hrsh7th/cmp-nvim-lsp'
@@ -185,31 +185,32 @@ use {
 --     }
 -- }
 --NEORG
-use {
-    "nvim-neorg/neorg",
-    config = function()
-        require('neorg').setup {
-            load = {
-                ["core.defaults"] = {}, -- Loads default behaviour
-                ["core.concealer"] = {}, -- Adds pretty icons to your documents
-                ["core.dirman"] = { -- Manages Neorg workspaces
-                    config = {
-                        workspaces = {
-                            notes = "~/notes",
-                        },
-                    },
-                },
-            },
-        }
-    end,
-    run = ":Neorg sync-parsers",
-    requires = "nvim-lua/plenary.nvim",
-}
+-- use {
+--     "nvim-neorg/neorg",
+--     config = function()
+--         require('neorg').setup {
+--             load = {
+--                 ["core.defaults"] = {}, -- Loads default behaviour
+--                 ["core.concealer"] = {}, -- Adds pretty icons to your documents
+--                 ["core.dirman"] = { -- Manages Neorg workspaces
+--                     config = {
+--                         workspaces = {
+--                             notes = "~/notes",
+--                         },
+--                     },
+--                 },
+--             },
+--         }
+--     end,
+--     run = ":Neorg sync-parsers",
+--     requires = "nvim-lua/plenary.nvim",
+-- }
 
 use {
   "ray-x/lsp_signature.nvim",
 }
+
 -- vim.notify
-use 'rcarriga/nvim-notify'
+-- use 'rcarriga/nvim-notify'
 end)
 
