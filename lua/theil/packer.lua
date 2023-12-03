@@ -80,10 +80,6 @@ use('nvim-tree/nvim-web-devicons')
 -- autotag
 use('windwp/nvim-ts-autotag')
 use 'm4xshen/autoclose.nvim'
--- use {
--- 'm4xshen/autoclose.nvim',
--- event = "BufReadPost"
--- }
 
 -- TODOist
 -- TODO: This is a test
@@ -99,6 +95,7 @@ use {
 
   -- TMUX / NVIM
   use('christoomey/vim-tmux-navigator')
+
 
   -- SPELLCHECKER
   use {
@@ -148,10 +145,16 @@ use {
 }
 
 -- colorizer
-use('norcalli/nvim-colorizer.lua')
+use {
+'norcalli/nvim-colorizer.lua',
+event = "BufReadPost"
+}
 
 -- indent lines
-use("lukas-reineke/indent-blankline.nvim")
+use {
+"lukas-reineke/indent-blankline.nvim",
+event = "BufReadPost"
+}
 
 -- JAVA
 use {
@@ -167,22 +170,28 @@ use {
 event = "BufRead *.java"
 }
 
--- startupscreen
-
--- use {
---     'goolord/alpha-nvim',
---     requires = { 'nvim-tree/nvim-web-devicons' },
---     config = function ()
---         require'alpha'.setup(require'alpha.themes.startify'.config)
---     end
--- }
 
 -- nvim cmp
-use 'hrsh7th/cmp-nvim-lsp'
-use 'hrsh7th/cmp-buffer'
-use 'hrsh7th/cmp-path'
-use 'hrsh7th/cmp-cmdline'
-use 'hrsh7th/nvim-cmp'
+use {
+ 'hrsh7th/cmp-nvim-lsp',
+ event = "BufReadPost"
+}
+use {
+ 'hrsh7th/cmp-buffer',
+ event = "BufReadPost"
+}
+use {
+ 'hrsh7th/cmp-path',
+ event = "BufReadPost"
+}
+use {
+ 'hrsh7th/cmp-cmdline',
+ event = "BufReadPost"
+}
+use {
+ 'hrsh7th/nvim-cmp',
+ event = "BufReadPost"
+}
 
 -- gitgutter
 use {
