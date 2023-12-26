@@ -310,8 +310,10 @@ _G.packer_plugins = {
     url = "https://github.com/mbbill/undotree"
   },
   ["vim-fugitive"] = {
-    loaded = true,
-    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/opt/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-gitgutter"] = {
@@ -351,9 +353,10 @@ vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au BufRead *.md ++once lua require("packer.load")({'markdown-preview.nvim'}, { event = "BufRead *.md" }, _G.packer_plugins)]]
+vim.cmd [[au BufReadPost * ++once lua require("packer.load")({'vim-gitgutter', 'vim-visual-multi', 'popup-menu.nvim', 'spelunker.vim', 'todo-comments.nvim', 'Comment.nvim'}, { event = "BufReadPost *" }, _G.packer_plugins)]]
 vim.cmd [[au BufRead *.go ++once lua require("packer.load")({'go.nvim', 'guihua.lua'}, { event = "BufRead *.go" }, _G.packer_plugins)]]
-vim.cmd [[au BufReadPost * ++once lua require("packer.load")({'popup-menu.nvim', 'spelunker.vim', 'todo-comments.nvim', 'Comment.nvim', 'vim-gitgutter', 'vim-visual-multi'}, { event = "BufReadPost *" }, _G.packer_plugins)]]
 vim.cmd [[au BufRead *.java ++once lua require("packer.load")({'nvim-dap', 'nvim-dap-ui', 'nvim-jdtls'}, { event = "BufRead *.java" }, _G.packer_plugins)]]
+vim.cmd [[au BufWritePost * ++once lua require("packer.load")({'vim-fugitive'}, { event = "BufWritePost *" }, _G.packer_plugins)]]
 vim.cmd [[au BufRead *.tsx *.jsx *.ts *.js *.html ++once lua require("packer.load")({'emmet-vim'}, { event = "BufRead *.tsx *.jsx *.ts *.js *.html" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")

@@ -29,7 +29,6 @@ return require("packer").startup(function(use)
 
 	use("mbbill/undotree")
 
-	use("tpope/vim-fugitive")
     use {
 "tpope/vim-fugitive",
 event = "BufWritePost"
@@ -50,7 +49,7 @@ event = "BufWritePost"
 			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
 
 			-- Autocompletion
-			{ "hrsh7th/nvim-cmp" }, -- Require
+			--{ "hrsh7th/nvim-cmp" }, -- Require
 
 			{ "hrsh7th/cmp-nvim-lsp" }, -- Required
 			{ "L3MON4D3/LuaSnip" }, -- Required
@@ -79,7 +78,7 @@ use('nvim-tree/nvim-web-devicons')
 
 -- autotag
 use('windwp/nvim-ts-autotag')
-use 'm4xshen/autoclose.nvim'
+use('m4xshen/autoclose.nvim')
 
 -- TODOist
 -- TODO: This is a test
@@ -90,7 +89,7 @@ use {
     config = function()
       require("todo-comments").setup()
     end,
-    event = "BufReadPost"
+    event = "BufReadPost",
   }
 
   -- TMUX / NVIM
@@ -100,11 +99,11 @@ use {
   -- SPELLCHECKER
   use {
 'kamykn/spelunker.vim',
-event = "BufReadPost"
+event = "BufReadPost",
   }
   use {
 'kamykn/popup-menu.nvim',
-event = "BufReadPost"
+event = "BufReadPost",
   }
 
 use {
@@ -147,13 +146,11 @@ use {
 -- colorizer
 use {
 'norcalli/nvim-colorizer.lua',
-event = "BufReadPost"
 }
 
 -- indent lines
 use {
 "lukas-reineke/indent-blankline.nvim",
-event = "BufReadPost"
 }
 
 -- JAVA
@@ -172,26 +169,13 @@ event = "BufRead *.java"
 
 
 -- nvim cmp
-use {
- 'hrsh7th/cmp-nvim-lsp',
- event = "BufReadPost"
-}
-use {
- 'hrsh7th/cmp-buffer',
- event = "BufReadPost"
-}
-use {
- 'hrsh7th/cmp-path',
- event = "BufReadPost"
-}
-use {
- 'hrsh7th/cmp-cmdline',
- event = "BufReadPost"
-}
-use {
- 'hrsh7th/nvim-cmp',
- event = "BufReadPost"
-}
+use('neovim/nvim-lspconfig')
+use('hrsh7th/cmp-nvim-lsp')
+use('hrsh7th/cmp-buffer')
+use('hrsh7th/cmp-path')
+use('hrsh7th/cmp-cmdline')
+use('hrsh7th/nvim-cmp')
+
 
 -- gitgutter
 use {
@@ -226,7 +210,6 @@ use {
  -- surround
  use {
  'kylechui/nvim-surround',
- event = "BufReadPost"
  }
 
 
