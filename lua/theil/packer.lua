@@ -37,8 +37,6 @@ return require("packer").startup(function(use)
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v2.x",
 		requires = {
-			-- LSP Support
-			{ "neovim/nvim-lspconfig" }, -- Required
 			{ -- Optional
 				"williamboman/mason.nvim",
 				run = function()
@@ -55,7 +53,7 @@ return require("packer").startup(function(use)
 		},
 	})
 
-use('neovim/nvim-lspconfig')
+-- NOTE: NULL-LS depreciated/archived
 use('jose-elias-alvarez/null-ls.nvim')
 use {
 'MunifTanjim/prettier.nvim',
@@ -215,6 +213,10 @@ use {
 use {
   "ray-x/lsp_signature.nvim",
 }
+
+-- OBSIDIAN
+use 'epwalsh/obsidian.nvim'
+use({'epwalsh/obsidian.nvim', tag = "*", requires={"nvim-lua/plenary.nvim"}})
 
 end)
 
