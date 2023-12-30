@@ -215,8 +215,50 @@ use {
 }
 
 -- OBSIDIAN
-use 'epwalsh/obsidian.nvim'
-use({'epwalsh/obsidian.nvim', tag = "*", requires={"nvim-lua/plenary.nvim"}})
+-- use({'epwalsh/obsidian.nvim', tag = "*",
+-- requires={
+--     "nvim-lua/plenary.nvim",
+--     "hrsh7th/nvim-cmp",
+--     "nvim-telescope/telescope.nvim",
+--     "ibhagwan/fzf-lua",
+--     "junegunn/fzf",
+--     "junegunn/fzf.vim",
+--     "echasnovski/mini.pick",
+-- }
+-- })
+use({
+  "epwalsh/obsidian.nvim",
+  tag = "*",  -- recommended, use latest release instead of latest commit
+  requires = {
+    -- Required.
+    "nvim-lua/plenary.nvim",
+
+    -- see below for full list of optional dependencies 👇
+  },
+  config = function()
+    require("obsidian").setup({
+      workspaces = {
+        {
+          name = "personal",
+          path = "~/documents/notes/personal",
+        },
+        {
+          name = "work",
+          path = "~/documents/notes/work",
+        },
+      },
+
+      -- see below for full list of options 👇
+    })
+  end,
+})
+-- PUG
+use 'digitaltoad/vim-pug'
+
+use({
+    "dNitro/vim-pug-complete",
+    ft = "pug"
+})
 
 end)
 
