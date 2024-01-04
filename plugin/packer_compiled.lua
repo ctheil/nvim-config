@@ -344,13 +344,6 @@ _G.packer_plugins = {
     path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
   },
-  ["vim-visual-multi"] = {
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/calebtheil/.local/share/nvim/site/pack/packer/opt/vim-visual-multi",
-    url = "https://github.com/mg979/vim-visual-multi"
-  },
   ["which-key.nvim"] = {
     config = { "\27LJ\2\nt\0\0\3\0\a\0\0156\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\15timeoutlen\ftimeout\6o\bvim\0" },
     loaded = true,
@@ -376,11 +369,11 @@ vim.cmd [[au FileType pug ++once lua require("packer.load")({'vim-pug-complete'}
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au BufReadPost * ++once lua require("packer.load")({'spelunker.vim', 'todo-comments.nvim', 'popup-menu.nvim', 'vim-gitgutter', 'Comment.nvim'}, { event = "BufReadPost *" }, _G.packer_plugins)]]
 vim.cmd [[au BufRead *.tsx *.jsx *.ts *.js *.html ++once lua require("packer.load")({'emmet-vim'}, { event = "BufRead *.tsx *.jsx *.ts *.js *.html" }, _G.packer_plugins)]]
 vim.cmd [[au BufRead *.md ++once lua require("packer.load")({'markdown-preview.nvim'}, { event = "BufRead *.md" }, _G.packer_plugins)]]
-vim.cmd [[au BufRead *.java ++once lua require("packer.load")({'nvim-dap', 'nvim-dap-ui', 'nvim-jdtls'}, { event = "BufRead *.java" }, _G.packer_plugins)]]
 vim.cmd [[au BufRead *.go ++once lua require("packer.load")({'go.nvim', 'guihua.lua'}, { event = "BufRead *.go" }, _G.packer_plugins)]]
-vim.cmd [[au BufReadPost * ++once lua require("packer.load")({'vim-gitgutter', 'vim-visual-multi', 'Comment.nvim', 'popup-menu.nvim', 'spelunker.vim', 'todo-comments.nvim'}, { event = "BufReadPost *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead *.java ++once lua require("packer.load")({'nvim-jdtls', 'nvim-dap', 'nvim-dap-ui'}, { event = "BufRead *.java" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 

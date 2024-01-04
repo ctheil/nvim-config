@@ -1,10 +1,10 @@
 --local tmux = require("vim-tmux-navigator")
 
 
-vim.keymap.set("n", "<C-H>", ":TmuxNavigateLeft<CR>")
-vim.keymap.set("n", "<C-L>", ":TmuxNavigateRight<CR>")
-vim.keymap.set("n", "<C-J>", ":TmuxNavigateUp<CR>")
-vim.keymap.set("n", "<C-K>", ":TmuxNavigateDown<CR>")
+vim.keymap.set("n", "<C-h>", ":TmuxNavigateLeft<CR>")
+vim.keymap.set("n", "<C-l>", ":TmuxNavigateRight<CR>")
+vim.keymap.set("n", "<C-j>", ":TmuxNavigateUp<CR>")
+vim.keymap.set("n", "<C-k>", ":TmuxNavigateDown<CR>")
 
 
 --vim.keymap.set("n", "<C-t>", function () ui.nav_file(2) end)

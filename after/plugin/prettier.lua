@@ -47,6 +47,7 @@ prettier.setup({
     "typescript",
     "typescriptreact",
     "yaml",
+    'pug'
   },
 })
 

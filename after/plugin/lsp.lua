@@ -11,6 +11,8 @@ lsp.ensure_installed({
     'cssls', 
     'cssmodules_ls', 
     'unocss',
+    'emmet_language_server',
+    'emmet_ls'
     --'gopls',
     --'golangci_lint_ls'
 })
@@ -22,7 +24,7 @@ cmp.setup({
     mapping = {
         ['<CR>'] = cmp.mapping.confirm({select=true}),
         ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+        -- ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
     }
 })
 
@@ -45,7 +47,7 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
 	vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
 	vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-	vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+	vim.keymap.set("n", "<leaver>hlp", function() vim.lsp.buf.signature_help() end, opts)
 
 end)
 

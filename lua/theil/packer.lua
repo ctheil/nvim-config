@@ -188,10 +188,10 @@ use {
 
 -- nvim-multi-cursor
 -- <C-n>
- use {
- 'mg979/vim-visual-multi',
- event = "BufReadPost"
- }
+ -- use {
+ -- 'mg979/vim-visual-multi',
+ -- event = "BufReadPost"
+ -- }
 
  -- FZF
  use 'nvim-telescope/telescope-fzf-native.nvim'
