@@ -173,6 +173,18 @@ use('hrsh7th/cmp-path')
 use('hrsh7th/cmp-cmdline')
 use('hrsh7th/nvim-cmp')
 
+-- NOICE
+use{ 'folke/noice.nvim',
+    requires = {
+        -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    "MunifTanjim/nui.nvim",
+    -- OPTIONAL:
+    --   `nvim-notify` is only needed, if you want to use the notification view.
+    --   If not available, we use `mini` as the fallback
+    "rcarriga/nvim-notify",
+}
+}
+
 
 -- gitgutter
 use {
@@ -186,12 +198,6 @@ use {
     requires = {'nvim-tree/nvim-web-devicons', opt = true}
 }
 
--- nvim-multi-cursor
--- <C-n>
- -- use {
- -- 'mg979/vim-visual-multi',
- -- event = "BufReadPost"
- -- }
 
  -- FZF
  use 'nvim-telescope/telescope-fzf-native.nvim'
@@ -214,18 +220,6 @@ use {
   "ray-x/lsp_signature.nvim",
 }
 
--- OBSIDIAN
--- use({'epwalsh/obsidian.nvim', tag = "*",
--- requires={
---     "nvim-lua/plenary.nvim",
---     "hrsh7th/nvim-cmp",
---     "nvim-telescope/telescope.nvim",
---     "ibhagwan/fzf-lua",
---     "junegunn/fzf",
---     "junegunn/fzf.vim",
---     "echasnovski/mini.pick",
--- }
--- })
 use({
   "epwalsh/obsidian.nvim",
   tag = "*",  -- recommended, use latest release instead of latest commit
