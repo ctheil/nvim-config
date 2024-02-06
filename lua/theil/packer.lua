@@ -228,32 +228,32 @@ use {
   "ray-x/lsp_signature.nvim",
 }
 
-use({
-  "epwalsh/obsidian.nvim",
-  tag = "*",  -- recommended, use latest release instead of latest commit
-  requires = {
-    -- Required.
-    "nvim-lua/plenary.nvim",
-
-    -- see below for full list of optional dependencies 👇
-  },
-  config = function()
-    require("obsidian").setup({
-      workspaces = {
-        {
-          name = "personal",
-          path = "~/documents/notes/personal",
-        },
-        {
-          name = "work",
-          path = "~/documents/notes/work",
-        },
-      },
-
-      -- see below for full list of options 👇
-    })
-  end,
-})
+-- use({
+--   "epwalsh/obsidian.nvim",
+--   tag = "*",  -- recommended, use latest release instead of latest commit
+--   requires = {
+--     -- Required.
+--     "nvim-lua/plenary.nvim",
+--
+--     -- see below for full list of optional dependencies 👇
+--   },
+--   config = function()
+--     require("obsidian").setup({
+--       workspaces = {
+--         {
+--           name = "personal",
+--           path = "~/documents/notes/personal",
+--         },
+--         {
+--           name = "work",
+--           path = "~/documents/notes/work",
+--         },
+--       },
+--
+--       -- see below for full list of options 👇
+--     })
+--   end,
+-- })
 -- PUG
 use 'digitaltoad/vim-pug'
 
