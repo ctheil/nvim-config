@@ -48,6 +48,13 @@ ls.add_snippets(nil, {
         }),
         snip({trig="kv", namr="Key Value Pair"}, {
             insert(1, "key"), text(": "), insert(2, "value")
-        })
+        }),
+        snip({trig="controller", namr="Typed Express Controller", }, {
+            text({"export const "}), insert(1, "func_name"), text(" = (req: Request, res: Response, next: NextFunction)"), text({" => {", ""}),
+            insert(2, "body"),
+            text(""),
+            text({"}", ""})
+        }),
     },
 })
+

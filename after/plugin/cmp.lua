@@ -45,8 +45,11 @@
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
+      { name = 'mason' },
+      { name = 'lsp-zero' },
       -- { name = 'vsnip' }, -- For vsnip users.
       { name = 'luasnip' }, -- For luasnip users.
+      { name = 'mason-lspconfig' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
     }, {
@@ -60,6 +63,13 @@
       { name = 'git' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
     }, {
       { name = 'buffer' },
+    })
+  })
+
+  -- Emmet completions for tailwindcss
+  cmp.setup.filetype('pug', {
+    sources = cmp.config.sources({
+      { name = 'emmet' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
     })
   })
 
@@ -86,4 +96,3 @@
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
   -- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
   --   capabilities = capabilities
-  -- }
