@@ -12,7 +12,8 @@ lsp.ensure_installed({
     'cssmodules_ls', 
     'unocss',
     'emmet_language_server',
-    'emmet_ls'
+    'emmet_ls',
+    "tailwindcss"
     --'gopls',
     --'golangci_lint_ls'
 })
@@ -57,5 +58,10 @@ lsp.skip_server_setup({'jdtls'})
 --require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 require("mason").setup({
 	PATH = "prepend", -- "skip" seems to cause spawning error
+})
+
+lsp.configure('tailwindcss', {
+  filetypes = { 'html', 'pug', 'javascript', 'typescript', 'css', 'sass', 'scss', 'less' }, -- Add 'pug' to the list
+  -- any other server-specific settings
 })
 lsp.setup()

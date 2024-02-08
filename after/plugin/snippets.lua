@@ -35,6 +35,7 @@ ls.add_snippets(nil, {
         snip({trig="kv", namr="Key Value Pair"}, {
             insert(1, "key"), text(": "), insert(2, "value")
         }),
+<<<<<<< HEAD
         snip({trig="component", namr="Typed React Component"}, {
             text({"Type "}), func(function(args) return args[1][1] end, {1}), text({ "Props = {", "" }),
             insert(4, "prop_key"), text(": "), insert(5, "prop_val"), text({ "",
@@ -51,3 +52,14 @@ ls.add_snippets(nil, {
 --     all = {
 --     },
 -- })
+=======
+        snip({trig="controller", namr="Typed Express Controller", }, {
+            text({"export const "}), insert(1, "func_name"), text(" = (req: Request, res: Response, next: NextFunction)"), text({" => {", ""}),
+            insert(2, "body"),
+            text(""),
+            text({"}", ""})
+        }),
+    },
+})
+
+>>>>>>> 95b4da199702b6dd3a67ac7f452ac5b257925872

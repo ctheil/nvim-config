@@ -213,7 +213,7 @@ use {
  -- emmet
  use {
  'mattn/emmet-vim',
- event = "BufRead *.tsx *.jsx *.ts *.js *.html"
+ event = "BufRead *.tsx *.jsx *.ts *.js *.html *.pug"
 
  }
  vim.g.user_emmet_leader_key = '<C-a>'
