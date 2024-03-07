@@ -29,9 +29,7 @@ return require("packer").startup(function(use)
 
 	use("mbbill/undotree")
 
-    use {
-"tpope/vim-fugitive",
-    }
+    use {"tpope/vim-fugitive"}
 
 	use({
 		"VonHeikemen/lsp-zero.nvim",
@@ -55,17 +53,15 @@ return require("packer").startup(function(use)
 
 -- NOTE: NULL-LS depreciated/archived
 use('jose-elias-alvarez/null-ls.nvim')
-use {
-'MunifTanjim/prettier.nvim',
-}
+use {'MunifTanjim/prettier.nvim'}
 
 -- MKARDOWN
 -- install without yarn or npm
-use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-    event = "BufRead *.md"
-})
+-- use({
+--     "iamcco/markdown-preview.nvim",
+--     run = function() vim.fn["mkdp#util#install"]() end,
+--     event = "BufRead *.md"
+-- })
 
 
 
@@ -76,9 +72,6 @@ use('nvim-tree/nvim-web-devicons')
 -- autotag
 use('windwp/nvim-ts-autotag')
 use('m4xshen/autoclose.nvim')
-
--- TODOist
--- TODO: This is a test
 
 use {
     "folke/todo-comments.nvim",
@@ -94,14 +87,12 @@ use {
 
 
   -- SPELLCHECKER
-  use {
-'kamykn/spelunker.vim',
-event = "BufReadPost",
-  }
-  use {
-'kamykn/popup-menu.nvim',
-event = "BufReadPost",
-  }
+  use {'kamykn/spelunker.vim',event = "BufReadPost"}
+
+--   use {
+-- 'kamykn/popup-menu.nvim',
+-- event = "BufReadPost",
+--   }
 
 use {
  'ray-x/go.nvim',
@@ -118,7 +109,6 @@ use { "catppuccin/nvim", as = "catppuccin" }
 
 -- auto comments
 use {
-
     "numToStr/Comment.nvim",
     config = function()
         require("Comment").setup()
@@ -127,18 +117,18 @@ use {
 }
 
 -- WhichKey
-use {
-  "folke/which-key.nvim",
-  config = function()
-    vim.o.timeout = true
-    vim.o.timeoutlen = 300
-    require("which-key").setup {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
-  end
-}
+-- use {
+--   "folke/which-key.nvim",
+--   config = function()
+--     vim.o.timeout = true
+--     vim.o.timeoutlen = 300
+--     require("which-key").setup {
+--       -- your configuration comes here
+--       -- or leave it empty to use the default settings
+--       -- refer to the configuration section below
+--     }
+--   end
+-- }
 
 -- colorizer
 use {
@@ -227,44 +217,6 @@ use {
 use {
   "ray-x/lsp_signature.nvim",
 }
-
-use({
-  "epwalsh/obsidian.nvim",
-  tag = "*",  -- recommended, use latest release instead of latest commit
-  requires = {
-    -- Required.
-    "nvim-lua/plenary.nvim",
-
-    -- see below for full list of optional dependencies 👇
-  },
-  config = function()
-    require("obsidian").setup({
-      workspaces = {
-        {
-          name = "personal",
-          path = "~/documents/notes/personal",
-        },
-        {
-          name = "work",
-          path = "~/documents/notes/work",
-        },
-      },
-
-      -- see below for full list of options 👇
-    })
-  end,
-})
--- PUG
-use 'digitaltoad/vim-pug'
-
-use({
-    "dNitro/vim-pug-complete",
-    ft = "pug"
-})
-
--- use "hrsh7th/vim-vsnip"
--- use "hrsh7th/vim-vsnip-integ"
---
 
 
 end)

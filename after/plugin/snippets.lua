@@ -19,24 +19,10 @@ local date = function() return {os.date('%Y-%m-%d')} end
 
 ls.add_snippets(nil, {
     all = {
-        snip({
-            trig = "date",
-            namr = "Date",
-            dscr = "Date in the form of YYYY-MM-DD",
-        }, {
-            func(date, {}),
-        }),
-        snip({trig="meta", namr="Metadata", dscr="..."}, {
-            text({
-                "---",
-                "title: "}), insert(1, "note_title"), text({"",
-            "author: "}), insert(2, "author")
-        }),
         snip({trig="const", namr="Arrow Function", dscr="JS/TS Arrow Function"}, {
             text({"const "}), insert(1, "func_name"), text(" = ("), insert(2, "params"), text({") => {", ""}),
-            insert(3, "body"),
-            text(""),
-            text({"}", ""})
+            insert(3, "body"), text({"", 
+            "};"})
         }),
         snip({trig="arr", namr="Anon Func", dscr="Anon arr function"}, {
             text("("), insert(1, "params"), text(") => "), insert(2, "body")
@@ -49,6 +35,24 @@ ls.add_snippets(nil, {
         snip({trig="kv", namr="Key Value Pair"}, {
             insert(1, "key"), text(": "), insert(2, "value")
         }),
+<<<<<<< HEAD
+        snip({trig="component", namr="Typed React Component"}, {
+            text({"Type "}), func(function(args) return args[1][1] end, {1}), text({ "Props = {", "" }),
+            insert(4, "prop_key"), text(": "), insert(5, "prop_val"), text({ "",
+        "};", ""}),
+            text({"const "}), insert(1, "component_name"), text(" = ("), insert(2, "params"), text(": "), func(function(args) return args[1][1] end, {1}), text({"Props) => {", ""}),
+            insert(3, "body"), text({"",
+            "};"}),
+            text({"",
+            "export default "}), func(function(args) return args[1][1] end, {1}), text(";")
+        }),
+    },
+})
+-- ls.add_snippets("lua", {
+--     all = {
+--     },
+-- })
+=======
         snip({trig="controller", namr="Typed Express Controller", }, {
             text({"export const "}), insert(1, "func_name"), text(" = (req: Request, res: Response, next: NextFunction)"), text({" => {", ""}),
             insert(2, "body"),
@@ -58,3 +62,4 @@ ls.add_snippets(nil, {
     },
 })
 
+>>>>>>> 95b4da199702b6dd3a67ac7f452ac5b257925872
