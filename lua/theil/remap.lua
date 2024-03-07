@@ -100,32 +100,32 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 --        print("Buffer is read-only. Cannot save, format and step out.")
 --    end
 --end
-function SaveFormatAndStepOut()
-    if vim.bo.modifiable then
-        vim.cmd('w') -- save
-
-        if vim.bo.filetype ~= 'go' then
-            -- Save cursor position
-            local saved_pos = vim.fn.getpos(".")
-
-            vim.cmd('Prettier') -- format
-
-            -- Restore cursor position after a delay
-            vim.defer_fn(function()
-                vim.fn.setpos('.', saved_pos)
-            end, 100) -- delay in milliseconds
-        end
-
-        -- Step out of the buffer after a delay
-        vim.defer_fn(function()
-            vim.cmd('Ex')
-        end, 200) -- delay in milliseconds
-
-    else 
-        print("Buffer is read-only. Cannot save, format and step out.")
-    end
-end
-
+-- function SaveFormatAndStepOut()
+--     if vim.bo.modifiable then
+--         vim.cmd('w') -- save
+--
+--         if vim.bo.filetype ~= 'go' then
+--             -- Save cursor position
+--             local saved_pos = vim.fn.getpos(".")
+--
+--             vim.cmd('Prettier') -- format
+--
+--             -- Restore cursor position after a delay
+--             vim.defer_fn(function()
+--                 vim.fn.setpos('.', saved_pos)
+--             end, 100) -- delay in milliseconds
+--         end
+--
+--         -- Step out of the buffer after a delay
+--         vim.defer_fn(function()
+--             vim.cmd('Ex')
+--         end, 200) -- delay in milliseconds
+--
+--     else 
+--         print("Buffer is read-only. Cannot save, format and step out.")
+--     end
+-- end
+--
 
 function SaveAndFormat()
     if vim.bo.modifiable then
@@ -148,17 +148,17 @@ function SaveAndFormat()
     end
 end
 
-function create_new_file()
-    local new_file_name = vim.fn.input("Enter the new file name: ")
-    if new_file_name ~= "" then
-        vim.cmd('e ' .. new_file_name)
-    end
-end
+-- function create_new_file()
+--     local new_file_name = vim.fn.input("Enter the new file name: ")
+--     if new_file_name ~= "" then
+--         vim.cmd('e ' .. new_file_name)
+--     end
+-- end
+--
+-- vim.api.nvim_set_keymap('n', '<leader>n', [[<Cmd>lua create_new_file()<CR>]], {noremap=true, silent=true})
 
-vim.api.nvim_set_keymap('n', '<leader>n', [[<Cmd>lua create_new_file()<CR>]], {noremap=true, silent=true})
-
-vim.api.nvim_set_keymap('n', '<leader>pv', ':lua SaveFormatAndStepOut()<CR>', {noremap = true, silent = true})
---vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
+--[[ vim.api.nvim_set_keymap('n', '<leader>pv', ':lua SaveFormatAndStepOut()<CR>', {noremap = true, silent = true}) ]]
+vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
 --
 vim.keymap.set({'n'}, 'C-f', function() require('lsp_signature').toggle_float_win()
 end, {silent = true, noremap = true, desc = 'toggle signature'})

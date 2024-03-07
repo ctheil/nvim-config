@@ -62,12 +62,12 @@ vim.api.nvim_exec([[
 
 
  --Save and format on exit
-vim.api.nvim_exec([[
-  augroup AutoSaveOnLeave
-    autocmd!
-    autocmd BufWinLeave * if &buftype == '' |  update | endif 
-  augroup END
-]], false)
+-- vim.api.nvim_exec([[
+--   augroup AutoSaveOnLeave
+--     autocmd!
+--     autocmd BufWinLeave * if &buftype == '' |  update | endif 
+--   augroup END
+-- ]], false)
 --vim.api.nvim_exec([[
 --  augroup AutoSaveOnQuit
 --    autocmd!
@@ -77,4 +77,4 @@ vim.api.nvim_exec([[
 
 
 
-vim.cmd("command! SaveFormatAndStepOut lua SaveFormatAndStepOut()")
+-- vim.cmd("command! SaveFormatAndStepOut lua SaveFormatAndStepOut()")

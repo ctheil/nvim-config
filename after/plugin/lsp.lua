@@ -6,10 +6,10 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
 	'tsserver',
-	'eslint', 
+	'eslint',
 	'rust_analyzer',
-    'cssls', 
-    'cssmodules_ls', 
+    'cssls',
+    'cssmodules_ls',
     'unocss',
     'emmet_language_server',
     'emmet_ls',
@@ -33,7 +33,7 @@ lsp.set_preferences({
 	sign_icons = { }
 })
 
-lsp.on_attach(function(client, bufnr)
+lsp.on_attach(function(_, bufnr)
 	-- see :help lsp-zero-keybindings
 	-- to learn the available actions
 	lsp.default_keymaps({buffer = bufnr})
@@ -61,7 +61,7 @@ require("mason").setup({
 })
 
 lsp.configure('tailwindcss', {
-  filetypes = { 'html', 'pug', 'javascript', 'typescript', 'css', 'sass', 'scss', 'less' }, -- Add 'pug' to the list
+  filetypes = { 'html', 'pug', 'javascript', 'typescript', 'css', 'sass', 'scss', 'less', 'jsx', 'tsx', 'typescriptreact', 'javscriptreact' }, -- Add 'pug' to the list
   -- any other server-specific settings
 })
 lsp.setup()
